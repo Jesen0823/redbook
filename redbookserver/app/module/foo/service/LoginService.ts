@@ -64,4 +64,12 @@ const WHITE_LIST = [
         avatar: `/avatar/avatar_03.png`,
         desc: '大家好，我是李四，我喜欢唱歌、跳舞、打篮球。',
     },
+    {
+        name: '17612169003',
+        pwd: '123456',
+        sex: 'male',
+        redBookId: 116903456,
+        avatar: `/avatar/avatar_04.png`,
+        desc: '大家好，我是埃德·斯塔福德（Ed Stafford），前驻阿富汗英国陆军上尉，电视节目主持人、探险家和冒险家，被誉为“现代鲁宾逊”。第一个走完亚马逊河全程的人。于2011年被提名为《国家地理》的“2010年度冒险家”。',
+    },
 ];
