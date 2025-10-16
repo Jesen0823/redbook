@@ -20,25 +20,25 @@ export class ArticleService {
     await sleep(1000);
     const find: Article | undefined = articles.find(i => i.id === id);
     if (!find) {
-        return {} as Article;
+      return {} as Article;
     }
-    const article = JSON.parse(JSON.stringify(find))
+    const article = JSON.parse(JSON.stringify(find));
     article.avatarUrl = `http://${this.host}/public${find.avatarUrl}`;
     article.images = article.images.map(i => `http://${this.host}/public${i}`);
     article.comments = article.comments ? article.comments.map(i => {
-        return {
-            ...i,
-            avatarUrl: `http://${this.host}/public${i.avatarUrl}`
-        } as ArticleComment;
+      return {
+        ...i,
+        avatarUrl: `http://${this.host}/public${i.avatarUrl}`,
+      } as ArticleComment;
     }) : [];
     if (article?.comments[0]?.children) {
-        const firstCommentChildren = [...article.comments[0].children];
-        if (firstCommentChildren?.length) {
-            const copySubFirst = firstCommentChildren[0];
-            copySubFirst.avatarUrl = `http://${this.host}/public${copySubFirst.avatarUrl}`;
-            firstCommentChildren[0] = copySubFirst;
-        }
-        article.comments[0].children = firstCommentChildren;
+      const firstCommentChildren = [ ...article.comments[0].children ];
+      if (firstCommentChildren?.length) {
+        const copySubFirst = firstCommentChildren[0];
+        copySubFirst.avatarUrl = `http://${this.host}/public${copySubFirst.avatarUrl}`;
+        firstCommentChildren[0] = copySubFirst;
+      }
+      article.comments[0].children = firstCommentChildren;
     }
     return article;
   }

@@ -14,7 +14,7 @@ export class FollowController {
   })
   async articleList(
     @HTTPQuery({ name: 'page' }) page: string,
-    @HTTPQuery({ name: 'size' }) size: string
+    @HTTPQuery({ name: 'size' }) size: string,
   ) {
     return await this.followService.getArticleList(parseInt(page), parseInt(size));
   }

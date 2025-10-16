@@ -14,8 +14,8 @@ export class UserController {
   })
   async login(
     @HTTPQuery({ name: 'name' }) name: string,
-    @HTTPQuery({ name: 'pwd' }) pwd: string
+    @HTTPQuery({ name: 'pwd' }) pwd: string,
   ) {
-    return await this.loginService.getLoginUserInfo(name, pwd)
+    return await this.loginService.getLoginUserInfo(name, pwd);
   }
 }

@@ -14,7 +14,7 @@ export class GoodsController {
   })
   async goodsList(
     @HTTPQuery({ name: 'page' }) page: string,
-    @HTTPQuery({ name: 'size' }) size: string
+    @HTTPQuery({ name: 'size' }) size: string,
   ) {
     return await this.goodsService.getGoodsList(parseInt(page), parseInt(size));
   }

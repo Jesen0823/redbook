@@ -14,7 +14,7 @@ export class HomeController {
   })
   async homeList(
     @HTTPQuery({ name: 'page' }) page: string,
-    @HTTPQuery({ name: 'size' }) size: string
+    @HTTPQuery({ name: 'size' }) size: string,
   ) {
     return await this.homeService.getHomeList(parseInt(page), parseInt(size));
   }

@@ -14,7 +14,7 @@ export class MessageController {
   })
   async messageList(
     @HTTPQuery({ name: 'page' }) page: string,
-    @HTTPQuery({ name: 'size' }) size: string
+    @HTTPQuery({ name: 'size' }) size: string,
   ) {
     return await this.messageService.getMessageList(parseInt(page), parseInt(size));
   }
